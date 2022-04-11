@@ -1,14 +1,18 @@
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
 import Content from "./components/Content/Content";
+import TopNavbar from "./components/Navbars/TopNavbar";
 
 const App = () => {
 	return (
-		<>
-			<Navbar />
-			<Content />
-		</>
+		<div className="app">
+			<Router>
+				<TopNavbar />
+				<Content />
+			</Router>
+		</div>
 	);
 };
 

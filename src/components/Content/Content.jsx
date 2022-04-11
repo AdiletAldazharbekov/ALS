@@ -1,19 +1,30 @@
 import React from "react";
-import  AboutUs  from "../../pages/AboutUs";
-import  Contacts  from "../../pages/Contacts";
-import  Home  from "../../pages/Home";
-import  MarketPlace  from "../../pages/MarketPlace";
-import  WorkingPage  from "../../pages/WorkingPage";
+import { Routes, Route } from "react-router-dom";
+import Home from "../../pages/Home";
+import MarketPlace from "../../pages/MarketPlace";
+import AboutUs from "../../pages/AboutUs";
+import Contacts from "../../pages/Contacts";
+import WorkingPage from "../../pages/WorkingPage";
 
 const Content = () => {
 	return (
-		<main  className="container">
-			<Home />
-			<MarketPlace />
-			<AboutUs />
-			<Contacts />
-			<WorkingPage />
-		</main>
+		<div className="content">
+				<Routes>
+					<Route exact path="/" element={<Home />} />
+					<Route
+						exact
+						path="/market-place"
+						element={<MarketPlace />}
+					/>
+					<Route exact path="/about-us" element={<AboutUs />} />
+					<Route exact path="/contacts" element={<Contacts />} />
+					<Route
+						exact
+						path="/working-page/*"
+						element={<WorkingPage />}
+					/>
+				</Routes>
+		</div>
 	);
 };
 
